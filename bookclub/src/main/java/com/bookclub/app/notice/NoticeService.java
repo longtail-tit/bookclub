@@ -17,7 +17,8 @@ public class NoticeService  implements BoardService{
 	@Override
 	public BoardVO getSelect(BoardVO boardVO) throws Exception {
 		// TODO Auto-generated method stub
-		return null;
+		
+		return noticeDAO.getSelect(boardVO);
 	}
 
 	@Override
@@ -34,8 +35,8 @@ public class NoticeService  implements BoardService{
 
 	@Override
 	public int setInsert(BoardVO boardVO) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		return noticeDAO.setInsert(boardVO);
 	}
 
 	@Override

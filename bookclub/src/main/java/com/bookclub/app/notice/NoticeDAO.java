@@ -22,7 +22,7 @@ public class NoticeDAO implements BoardDAO{
 	@Override
 	public BoardVO getSelect(BoardVO boardVO) throws Exception {
 		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.selectOne(NAMESPACE+"getSelectOne", boardVO);
 	}
 
 	@Override
@@ -40,7 +40,9 @@ public class NoticeDAO implements BoardDAO{
 	@Override
 	public int setInsert(BoardVO boardVO) throws Exception {
 		// TODO Auto-generated method stub
-		return 0;
+		System.out.println(boardVO.getContent());
+		
+		return sqlSession.insert(NAMESPACE+"setInsert", boardVO);
 	}
 
 	@Override

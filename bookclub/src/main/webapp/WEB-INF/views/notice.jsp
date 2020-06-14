@@ -31,7 +31,7 @@
 	    <c:forEach  items="${list}" var="vo">
 	      <tr>
 	        <td>${vo.no}</td>
-	        <td>${vo.title}</td>
+	        <td><a href="./noticeOne?no=${vo.no}">${vo.title}</a></td>
 	        <td>${vo.content}</td>
 	        <td>${vo.writer}</td>
 	        <td>${vo.regDate}</td>
@@ -40,6 +40,7 @@
 	    </c:forEach>
     </tbody>
   </table>
+  <a href="./noticeWrite" class="btn btn-danger">Write</a>
 </div>
 
 </body>

@@ -5,8 +5,19 @@
   
   <mapper namespace="com.bookclub.app.notice.NoticeDAO">
   
-  <select id="getList" resultType="com.bookclub.app.board.BoardVO" >
-   select * from notice
+  <select id="getList" resultType="com.bookclub.app.board.BoardVO"  >
+   select * from notice order by no 
   </select>
+  
+  <insert id="setInsert" parameterType="com.bookclub.app.board.BoardVO" >
+  insert into notice(no, title, content, writer, regdate, hit) 
+  values(notice_seq.nextval, '${title}', '${content}','${writer}',sysdate, 0)
+  </insert>
+  
+  <select id="getSelectOne" parameterType="com.bookclub.app.board.BoardVO" resultType="com.bookclub.app.board.BoardVO">
+  select * from notice where no = ${no}
+  </select>
+ 
+  
   
   </mapper>  
