@@ -18,6 +18,9 @@
   select * from notice where no = ${no}
   </select>
  
+ <delete id="setDelete" parameterType="java.lang.Integer" >
+ delete from notice where no = #{no}
+ </delete>
   
   
   </mapper>  

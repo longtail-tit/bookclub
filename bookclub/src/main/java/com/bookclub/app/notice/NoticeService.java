@@ -21,11 +21,7 @@ public class NoticeService  implements BoardService{
 		return noticeDAO.getSelect(boardVO);
 	}
 
-	@Override
-	public int setDelete(BoardVO boardVO) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+	
 
 	@Override
 	public int setUpdate(BoardVO boardVO) throws Exception {
@@ -44,6 +40,14 @@ public class NoticeService  implements BoardService{
 		System.out.println("service!!  :"+noticeDAO.getList().isEmpty());
 	
 		return noticeDAO.getList();
+	}
+
+
+
+	@Override
+	public int setDelete(int no) throws Exception {
+		// TODO Auto-generated method stub
+		return noticeDAO.setDelete(no);
 	}
 
 }

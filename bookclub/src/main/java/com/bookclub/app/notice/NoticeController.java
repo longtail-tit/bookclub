@@ -61,6 +61,18 @@ public class NoticeController {
 		return mv; 
 	}
 	//게시글 삭제
+	@GetMapping(value="deleteNotice")
+	public ModelAndView setDelete(int no) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		int result = noticeService.setDelete(no);
+		if (result >0) {
+			System.out.println("삭제되었습니다");
+		}else {
+			System.out.println("삭제안됨 XXXX");
+		}
+		mv.setViewName("redirect:board");
+		return mv;
+	}
 	//게시글 수정
 	
 	

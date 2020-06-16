@@ -9,7 +9,7 @@ public interface BoardService {
 	public BoardVO getSelect(BoardVO boardVO) throws Exception;
 	
 	//delete
-	public int setDelete(BoardVO boardVO) throws Exception;
+	public int setDelete(int no) throws Exception;
 	
 	//update
 	public int setUpdate(BoardVO boardVO) throws Exception;

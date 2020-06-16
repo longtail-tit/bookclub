@@ -28,9 +28,9 @@
       </tr>
     </thead>
     <tbody>
-	    <c:forEach  items="${list}" var="vo">
+	    <c:forEach  items="${list}" var="vo" varStatus="index">
 	      <tr>
-	        <td>${vo.no}</td>
+	        <td>${index.count}</td>
 	        <td><a href="./noticeOne?no=${vo.no}">${vo.title}</a></td>
 	        <td>${vo.content}</td>
 	        <td>${vo.writer}</td>
