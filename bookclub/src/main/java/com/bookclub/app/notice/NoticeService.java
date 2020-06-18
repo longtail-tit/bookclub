@@ -50,4 +50,14 @@ public class NoticeService  implements BoardService{
 		return noticeDAO.setDelete(no);
 	}
 
+
+
+	@Override
+	public int updateHit(int no) throws Exception {
+		// TODO Auto-generated method stub
+		return noticeDAO.updateHit(no);
+	}
+
+
+
 }

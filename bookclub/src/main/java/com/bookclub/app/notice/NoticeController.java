@@ -53,11 +53,22 @@ public class NoticeController {
 	}
 	//게시글 상세보기- 제목 클릭, 게시글 select 해오기 
 	@GetMapping(value = "noticeOne")
-	public ModelAndView getNotice(BoardVO boardVO) throws Exception{
+	public ModelAndView getNotice(BoardVO boardVO, int no) throws Exception{
+	   
 		ModelAndView mv = new ModelAndView();
-		boardVO = noticeService.getSelect(boardVO);
-		mv.addObject("vo",boardVO);
-		mv.setViewName("noticeOne");
+		
+		//조회수 
+		System.out.println("no= "+no);
+		int result = noticeService.updateHit(no);
+		if (result != 1) {
+			System.out.println("fail update !!");
+			
+		}else {
+			
+			boardVO = noticeService.getSelect(boardVO);
+			mv.addObject("vo",boardVO);
+			mv.setViewName("noticeOne");
+		}
 		return mv; 
 	}
 	//게시글 삭제

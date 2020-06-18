@@ -53,4 +53,12 @@ public class NoticeDAO implements BoardDAO{
 		return sqlSession.selectList(NAMESPACE+"getList");
 	}
 
+	@Override
+	public int updateHit(int no) throws Exception {
+		// TODO Auto-generated method stub
+		return sqlSession.update(NAMESPACE+"setUpdateHit", no);
+	}
+
+	
+
 }

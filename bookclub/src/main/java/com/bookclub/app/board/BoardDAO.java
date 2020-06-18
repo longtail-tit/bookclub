@@ -18,4 +18,7 @@ public interface BoardDAO {
 		
 		//selectlist
 		public List<BoardVO> getList() throws Exception;
+		
+		//updateHit
+		public int updateHit(int no) throws Exception;
 }

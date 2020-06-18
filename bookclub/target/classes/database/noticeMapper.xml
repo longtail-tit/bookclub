@@ -22,5 +22,9 @@
  delete from notice where no = #{no}
  </delete>
   
+  <update id="setUpdateHit" parameterType="java.lang.Integer" >
+  update notice set hit = hit+1 
+  where no = #{no}
+  </update>
   
   </mapper>  
