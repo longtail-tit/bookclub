@@ -6,7 +6,7 @@
   <mapper namespace="com.bookclub.app.notice.NoticeDAO">
   
   <select id="getList" resultType="com.bookclub.app.board.BoardVO"  >
-   select * from notice order by no 
+   select * from notice order by no desc
   </select>
   
   <insert id="setInsert" parameterType="com.bookclub.app.board.BoardVO" >

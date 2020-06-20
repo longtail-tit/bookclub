@@ -1,7 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>       
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>   
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,7 +17,7 @@
 
 <div class="container">
   <h1>Notice</h1>
-  <p>책 안읽어서 책 읽으려고 만나는 모임 공지사항 ~ </p>      
+  <p>규칙을 어기는 자에게 자비란 없다 </p>      
   <br/>      
   <br/>      
   <table class="table">
@@ -22,18 +25,19 @@
       <tr>
         <th>NO</th>
         <th>TITLE</th>
-        <th>CONTENT</th>
+     
         <th>WRITER</th>
         <th>DATE</th>
         <th>HIT</th>
       </tr>
     </thead>
     <tbody>
+   		<c:set var="listSize" value="${fn:length(list)}"/>
 	    <c:forEach  items="${list}" var="vo" varStatus="index">
 	      <tr>
-	        <td>${index.count}</td>
+	        <td>${listSize - index.index}</td>
 	        <td><a href="./noticeOne?no=${vo.no}">${vo.title}</a></td>
-	        <td>${vo.content}</td>
+	  
 	        <td>${vo.writer}</td>
 	        <td><fmt:formatDate value="${vo.regDate}" pattern="yyyy-MM-dd"/></td>
 	        <td>${vo.hit}</td>
